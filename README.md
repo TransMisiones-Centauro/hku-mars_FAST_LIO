@@ -1,3 +1,29 @@
+## 0. Reproducible Package
+Prerequisites:
+* [Docker](https://docs.docker.com/engine/install/ubuntu/)
+* [NVIDIA-Docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+* [OSRF-Rocker](https://github.com/osrf/rocker)
+
+Please download the rosbag files from this [link](https://drive.google.com/drive/folders/1CGYEJ9-wWjr8INyan6q1BZz_5VtGB-fP?usp=sharing).
+
+**Terminal 1:**
+```
+rocker --env ROS_MASTER_URI=http://172.17.0.2:11311 \
+       --env ROS_IP=172.17.0.2 \
+       --nvidia --x11 \
+       ghcr.io/robotresearchrepos/hku-mars_fast_lio:main \
+       roslaunch fast_lio mapping_avia.launch
+```
+
+**Terminal 2:**
+```
+docker run --rm -it --volume .:/bags \
+           --env ROS_MASTER_URI=http://172.17.0.2:11311 \
+           --env ROS_IP=172.17.0.3 \
+           ros:noetic-ros-core \
+           rosbag play /bags/outdoor_Mainbuilding_100Hz_2020-12-24-16-46-29.bag
+```
+
 ## Related Works and Extended Application
 
 **SLAM:**
