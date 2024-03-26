@@ -21,7 +21,7 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
  && cd /catkin_ws \
- && catkin_make -j1
+ && catkin_make
  
  RUN sed --in-place --expression \
       '$isource "/catkin_ws/devel/setup.bash"' \
