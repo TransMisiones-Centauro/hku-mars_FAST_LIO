@@ -11,7 +11,7 @@ Please download the rosbag files from this [link](https://drive.google.com/drive
 rocker --env ROS_MASTER_URI=http://172.17.0.2:11311 \
        --env ROS_IP=172.17.0.2 \
        --nvidia --x11 \
-       ghcr.io/robotresearchrepos/hku-mars_fast_lio:main \
+       ghcr.io/transmisiones-centauro/hku-mars_fast_lio:main \
        roslaunch fast_lio mapping_avia.launch
 ```
 
